@@ -1,9 +1,8 @@
 const players = [
-  "Alice", "Bob", "Charlie", "Diana", "Eve",
-  "Frank", "Grace", "Hugo", "Ivy", "Jack"
+  "Alice", "Bob", "Charlie", "Diana", "Eve", "Frank", "Grace", "Hugo", "Ivy", "Jack"
 ];
 
-const days = [1, 2, 3];
+const days = ["07/05/2025", "24/05/2025"];
 
 function createTable() {
   const size = players.length;
