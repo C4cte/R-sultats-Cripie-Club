@@ -2,42 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tournoi d'échecs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tournoi Échecs 2025</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Tournoi d'échecs</h1>
+  <header>
+    <h1>Résultats - Tournoi Échecs 2025</h1>
+    <nav>
+      <ul id="days-list">
+        <li class="active" data-day="Jour 1">Jour 1</li>
+        <li data-day="Jour 2">Jour 2</li>
+        <li data-day="Jour 3">Jour 3</li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="tabs">
-    <button class="tab-button active" onclick="showDay(1)">Jour 1</button>
-    <button class="tab-button" onclick="showDay(2)">Jour 2</button>
-    <button class="tab-button" onclick="showDay(3)">Jour 3</button>
-  </div>
-
-  <div id="day1" class="tab-content active">
-    <h2>05/07/2024</h2>
+  <main>
     <div class="table-container">
-  <table id="score-table" class="table-slide">
-    <!-- contenu de tableau -->
-  </table>
-</div>
-
-  <div id="day2" class="tab-content">
-    <h2>24/05/2025</h2>
-    <div class="table-container">
-  <table id="score-table" class="table-slide">
-    <!-- contenu de tableau -->
-  </table>
-</div>
-
-  <div id="day3" class="tab-content">
-    <h2>Jour 3</h2>
-    <div class="table-container">
-  <table id="score-table" class="table-slide">
-    <!-- contenu de tableau -->
-  </table>
-</div>
+      <table id="score-table" class="table-slide">
+        <!-- Le tableau sera généré via JS -->
+      </table>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
