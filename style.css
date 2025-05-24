@@ -1,137 +1,77 @@
-/* Style foncé et futuriste */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f1a;
+  color: #eee;
   margin: 0;
-  background: #0d0f14;
-  color: #c0c5ce;
-  font-family: 'Orbitron', sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  background: linear-gradient(90deg, #0f1624, #1c2138);
-  padding: 1rem 2rem;
-  box-shadow: 0 0 20px #00ffeaaa;
-  text-align: center;
+  padding: 20px;
 }
 
 h1 {
-  margin: 0;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #00ffea;
-  text-shadow: 0 0 10px #00ffea;
+  text-align: center;
+  color: #00ffe0;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0 0;
+h2 {
+  color: #00ffc3;
+  margin-top: 30px;
+}
+
+.tabs {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  margin-bottom: 20px;
+  gap: 10px;
 }
 
-nav li {
+.tab-button {
+  padding: 10px 20px;
+  background-color: #1a1a2e;
+  color: #00ffe0;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background: #15202b;
-  color: #67fff5;
-  box-shadow: 0 0 6px #00ffea44;
-  user-select: none;
-  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-nav li:hover {
-  background: #00ffea;
-  color: #0d0f14;
-  box-shadow: 0 0 15px #00ffea;
+.tab-button.active,
+.tab-button:hover {
+  background-color: #00ffe033;
 }
 
-nav li.active {
-  background: #00ffea;
-  color: #0d0f14;
-  box-shadow: 0 0 20px #00ffd4;
-  font-weight: 700;
+.tab-content {
+  display: none;
 }
 
-main {
-  flex-grow: 1;
-  padding: 2rem;
-  overflow-x: auto;
+.tab-content.active {
+  display: block;
 }
 
 .table-container {
-  position: relative;
-  overflow: hidden;
+  overflow-x: auto;
+}
+
+table {
   width: 100%;
   max-width: 900px;
-  margin: auto;
-  height: auto;
-  min-height: 360px;
-}
-
-/* Animation */
-
-.table-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  margin: 0 auto;
   border-collapse: collapse;
-  background: #15202bdd;
-  box-shadow: 0 0 15px #00ffeaaa;
-  transition: transform 0.5s ease;
-  color: #67fff5;
+  border: 1px solid #333;
 }
 
-.slide-in-right {
-  transform: translateX(100%);
-}
-
-.slide-in-right-active {
-  transform: translateX(0);
-}
-
-.slide-out-left-active {
-  transform: translateX(-100%);
-}
-
-/* Tableau */
-
-table#score-table th,
-table#score-table td {
-  border: 1px solid #00ffea66;
-  padding: 8px 12px;
+th,
+td {
+  border: 1px solid #333;
+  padding: 8px;
   text-align: center;
-  font-variant-numeric: tabular-nums;
+  min-width: 60px;
 }
 
-table#score-table th {
-  background: #004d4d;
-  color: #00fff7;
-  font-weight: 700;
-  text-shadow: 0 0 6px #00ffeaaa;
+th {
+  background-color: #1f1f2e;
+  color: #00ffc3;
 }
 
-table#score-table td {
-  background: #0a121a;
-  font-weight: 500;
-  transition: background-color 0.3s;
+td {
+  background-color: #141420;
 }
-
-table#score-table td:hover {
-  background-color: #002f2f;
-  cursor: default;
-  color: #00fff7;
-}
-
