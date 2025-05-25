@@ -73,13 +73,13 @@ td {
 }
 
 th {
-  font-size: 10px;              /* police plus petite */
+  font-size: 11px;              /* police plus petite */
   font-weight: normal;          /* facultatif : moins épais */
 }
 
 td {
   background-color: #141420;
-  font-size: 11px;              /* taille du texte dans les cellules */
+  font-size: 12px;              /* taille du texte dans les cellules */
 }
 
 .result-win {
