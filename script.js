@@ -102,3 +102,25 @@ function showDay(day) {
     container.appendChild(createTable(day));
   }
 }
+
+let current = 1;
+
+function switchTable() {
+  const currentTable = document.getElementById("table" + current);
+  const next = current === 1 ? 2 : 1;
+  const nextTable = document.getElementById("table" + next);
+
+  currentTable.classList.remove("active");
+  currentTable.classList.add("out-left");
+
+  nextTable.classList.remove("in-right");
+  nextTable.classList.add("active");
+
+  current = next;
+
+  // Réinitialise les classes après l'animation
+  setTimeout(() => {
+    currentTable.classList.remove("out-left");
+    nextTable.classList.remove("in-right");
+  }, 500);
+}
