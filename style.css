@@ -16,11 +16,6 @@ h2 {
   margin-top: 30px;
 }
 
-.diagonal {
-  background-color: #2a2a3f;
-  color: #aaa;
-}
-
 .tabs {
   display: flex;
   justify-content: center;
@@ -99,4 +94,11 @@ td {
 .result-na {
   background-color: #aa6644; /* Orange terne */
   color: #fff0dc;
+}
+
+
+/* Pour la diagonale (cases du joueur contre lui-même) */
+.diagonal {
+  background-color: #222;
+  color: #555;
 }
