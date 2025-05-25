@@ -54,19 +54,36 @@ function createTable(day) {
     th.textContent = rowPlayer;
     row.appendChild(th);
 
-    players.forEach(colPlayer => {
-      const td = document.createElement("td");
-      if (rowPlayer === colPlayer) {
-        td.textContent = "—";
-        td.classList.add("diagonal");
-      } else {
-        td.textContent = results[day]?.[colPlayer]?.[rowPlayer] || "";
-      }
-      row.appendChild(td);
-    });
+players.forEach(colPlayer => {
+  const td = document.createElement("td");
 
-    table.appendChild(row);
-  });
+  if (rowPlayer === colPlayer) {
+    td.textContent = "—";
+    td.classList.add("diagonal");
+  } else {
+    const result = results[day]?.[colPlayer]?.[rowPlayer] || "";
+    td.textContent = result;
+
+    // Ajouter classe selon le contenu
+    switch (result) {
+      case "1-0":
+        td.classList.add("result-win");
+        break;
+      case "0-1":
+        td.classList.add("result-loss");
+        break;
+      case "½-½":
+      case "1/2-1/2":
+        td.classList.add("result-draw");
+        break;
+      case "N/A":
+        td.classList.add("result-na");
+        break;
+    }
+  }
+
+  row.appendChild(td);
+});
 
   return table;
 }
