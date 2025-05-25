@@ -46,9 +46,9 @@ const results = {
 };
 
 // Fonction pour créer un tableau avec les résultats
-function createTable(dayNumber) {
-  const size = players.length;
+function createTable(day) {
   const table = document.createElement("table");
+
   const header = document.createElement("tr");
   header.appendChild(document.createElement("th")); // coin vide
   players.forEach(p => {
@@ -58,27 +58,25 @@ function createTable(dayNumber) {
   });
   table.appendChild(header);
 
-  for (let i = 0; i < size; i++) {
+  players.forEach(rowPlayer => {
     const row = document.createElement("tr");
     const th = document.createElement("th");
-    th.textContent = players[i];
+    th.textContent = rowPlayer;
     row.appendChild(th);
 
-    for (let j = 0; j < size; j++) {
+    players.forEach(colPlayer => {
       const td = document.createElement("td");
-      
-      // Cas où c'est la diagonale (match contre soi-même)
-      if (i === j) {
+      if (rowPlayer === colPlayer) {
         td.textContent = "—";
+        td.classList.add("diagonal");
       } else {
-        const result = results[dayNumber][players[i]] ? results[dayNumber][players[i]][players[j]] : "";
-        td.textContent = result;
+        td.textContent = results[day]?.[colPlayer]?.[rowPlayer] || "";
       }
       row.appendChild(td);
-    }
+    });
 
     table.appendChild(row);
-  }
+  });
 
   return table;
 }
@@ -91,7 +89,6 @@ function showDay(dayNumber) {
   document.querySelectorAll(".tab-button")[dayNumber - 1].classList.add("active");
 }
 
-// Générer les tableaux pour chaque jour
 days.forEach(day => {
   const container = document.querySelector(`#day${day} .table-container`);
   container.appendChild(createTable(day));
