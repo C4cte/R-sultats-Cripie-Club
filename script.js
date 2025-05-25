@@ -1,7 +1,3 @@
-const players = [
-  "Grégory", "SQUAAD-4", "Frisk", "darkdust", "SezTy", "darkness", "Bendospeed9", "penguin", "444_ma..li", "Nevender", "Draco", "Mimo", "pointriangle", "quentin59279", "yoyo1406_", "Fyn", "Rip_toi", "cripie333", "champion93300"
-];
-
 const players = {
   1: ["Grégory", "SQUAAD-4", "Frisk", "darkdust", "SezTy", "darkness", "Bendospeed9", "penguin", "444_ma..li", "Nevender", "Draco", "Mimo", "pointriangle", "quentin59279", "yoyo1406_", "Fyn", "Rip_toi", "cripie333", "champion93300"],
   2: ["1", "2", "3",],
