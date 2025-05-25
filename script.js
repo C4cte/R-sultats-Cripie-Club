@@ -2,6 +2,12 @@ const players = [
   "Grégory", "SQUAAD-4", "Frisk", "darkdust", "SezTy", "darkness", "Bendospeed9", "penguin", "444_ma..li", "Nevender", "Draco", "Mimo", "pointriangle", "quentin59279", "yoyo1406_", "Fyn", "Rip_toi", "cripie333", "champion93300"
 ];
 
+const players = {
+  1: ["Grégory", "SQUAAD-4", "Frisk", "darkdust", "SezTy", "darkness", "Bendospeed9", "penguin", "444_ma..li", "Nevender", "Draco", "Mimo", "pointriangle", "quentin59279", "yoyo1406_", "Fyn", "Rip_toi", "cripie333", "champion93300"],
+  2: ["1", "2", "3",],
+};
+
+
 const days = [1, 2, 3];
 
 const results = {
@@ -38,11 +44,12 @@ const results = {
 // Fonction pour créer un tableau avec les résultats
 function createTable(day) {
   const table = document.createElement("table");
+  const dayPlayers = players[day] || [];
 
   // Entête
   const header = document.createElement("tr");
   header.appendChild(document.createElement("th"));
-  players.forEach(p => {
+  dayPlayers.forEach(p => {
     const th = document.createElement("th");
     th.textContent = p;
     header.appendChild(th);
@@ -50,13 +57,13 @@ function createTable(day) {
   table.appendChild(header);
 
   // Corps
-  players.forEach(rowPlayer => {
+  dayPlayers.forEach(rowPlayer => {
     const row = document.createElement("tr");
     const th = document.createElement("th");
     th.textContent = rowPlayer;
     row.appendChild(th);
 
-    players.forEach(colPlayer => {
+    dayPlayers.forEach(colPlayer => {
       const td = document.createElement("td");
       if (rowPlayer === colPlayer) {
         td.textContent = "—";
