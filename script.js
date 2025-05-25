@@ -39,8 +39,9 @@ const results = {
 function createTable(day) {
   const table = document.createElement("table");
 
+  // Entête
   const header = document.createElement("tr");
-  header.appendChild(document.createElement("th")); // coin vide
+  header.appendChild(document.createElement("th"));
   players.forEach(p => {
     const th = document.createElement("th");
     th.textContent = p;
@@ -48,59 +49,35 @@ function createTable(day) {
   });
   table.appendChild(header);
 
+  // Corps
   players.forEach(rowPlayer => {
-  const row = document.createElement("tr");
-  const th = document.createElement("th");
-  th.textContent = rowPlayer;
-  row.appendChild(th);
+    const row = document.createElement("tr");
+    const th = document.createElement("th");
+    th.textContent = rowPlayer;
+    row.appendChild(th);
 
-  players.forEach(colPlayer => {
-    const td = document.createElement("td");
-
-    if (rowPlayer === colPlayer) {
-      td.textContent = "—";
-      td.classList.add("diagonal");
-    } else {
-      const result = results[day]?.[colPlayer]?.[rowPlayer] || "";
-      td.textContent = result;
-
-      // Ajouter classe selon le contenu
-      switch (result) {
-        case "1-0":
-          td.classList.add("result-win");
-          break;
-        case "0-1":
-          td.classList.add("result-loss");
-          break;
-        case "½-½":
-        case "1/2-1/2":
-          td.classList.add("result-draw");
-          break;
-        case "N/A":
-          td.classList.add("result-na");
-          break;
+    players.forEach(colPlayer => {
+      const td = document.createElement("td");
+      if (rowPlayer === colPlayer) {
+        td.textContent = "—";
+        td.classList.add("diagonal");
+      } else {
+        const result = results[day]?.[colPlayer]?.[rowPlayer] || "";
+        td.textContent = result;
+        switch (result) {
+          case "1-0":      td.classList.add("result-win");  break;
+          case "0-1":      td.classList.add("result-loss"); break;
+          case "½-½":
+          case "1/2-1/2":  td.classList.add("result-draw"); break;
+          case "N/A":      td.classList.add("result-na");   break;
+        }
       }
-    }
+      row.appendChild(td);
+    });
 
-    row.appendChild(td);
+    // ← N’OUBLIE PAS CETTE LIGNE
+    table.appendChild(row);
   });
-
-  table.appendChild(row);
-});
-
 
   return table;
 }
-
-function showDay(dayNumber) {
-  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-  document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-
-  document.querySelector(`#day${dayNumber}`).classList.add("active");
-  document.querySelectorAll(".tab-button")[dayNumber - 1].classList.add("active");
-}
-
-days.forEach(day => {
-  const container = document.querySelector(`#day${day} .table-container`);
-  container.appendChild(createTable(day));
-});
