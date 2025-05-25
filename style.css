@@ -108,3 +108,35 @@ td {
   background-color: #999999;
   color: #ffffff;
 }
+
+#table-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.table-slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: transform 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.table-slide.active {
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.table-slide.out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.table-slide.in-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
