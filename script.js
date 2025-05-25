@@ -67,15 +67,13 @@ function createTable(day) {
         switch (result) {
           case "1-0":      td.classList.add("result-win");  break;
           case "0-1":      td.classList.add("result-loss"); break;
-          case "½-½":
-          case "1/2-1/2":  td.classList.add("result-draw"); break;
+          case "½-½":      td.classList.add("result-draw"); break;
           case "N/A":      td.classList.add("result-na");   break;
         }
       }
       row.appendChild(td);
     });
 
-    // ← N’OUBLIE PAS CETTE LIGNE
     table.appendChild(row);
   });
 
