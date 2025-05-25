@@ -79,3 +79,23 @@ function createTable(day) {
 
   return table;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector("#day1 .table-container");
+  container.appendChild(createTable(1));
+});
+
+function showDay(day) {
+  document.querySelectorAll(".tab-button").forEach((btn, index) => {
+    btn.classList.toggle("active", index === day - 1);
+  });
+
+  document.querySelectorAll(".tab-content").forEach((tab, index) => {
+    tab.classList.toggle("active", index === day - 1);
+  });
+
+  const container = document.querySelector(`#day${day} .table-container`);
+  if (!container.querySelector("table")) {
+    container.appendChild(createTable(day));
+  }
+}
