@@ -49,41 +49,45 @@ function createTable(day) {
   table.appendChild(header);
 
   players.forEach(rowPlayer => {
-    const row = document.createElement("tr");
-    const th = document.createElement("th");
-    th.textContent = rowPlayer;
-    row.appendChild(th);
+  const row = document.createElement("tr");
+  const th = document.createElement("th");
+  th.textContent = rowPlayer;
+  row.appendChild(th);
 
-players.forEach(colPlayer => {
-  const td = document.createElement("td");
+  players.forEach(colPlayer => {
+    const td = document.createElement("td");
 
-  if (rowPlayer === colPlayer) {
-    td.textContent = "—";
-    td.classList.add("diagonal");
-  } else {
-    const result = results[day]?.[colPlayer]?.[rowPlayer] || "";
-    td.textContent = result;
+    if (rowPlayer === colPlayer) {
+      td.textContent = "—";
+      td.classList.add("diagonal");
+    } else {
+      const result = results[day]?.[colPlayer]?.[rowPlayer] || "";
+      td.textContent = result;
 
-    // Ajouter classe selon le contenu
-    switch (result) {
-      case "1-0":
-        td.classList.add("result-win");
-        break;
-      case "0-1":
-        td.classList.add("result-loss");
-        break;
-      case "½-½":
-      case "1/2-1/2":
-        td.classList.add("result-draw");
-        break;
-      case "N/A":
-        td.classList.add("result-na");
-        break;
+      // Ajouter classe selon le contenu
+      switch (result) {
+        case "1-0":
+          td.classList.add("result-win");
+          break;
+        case "0-1":
+          td.classList.add("result-loss");
+          break;
+        case "½-½":
+        case "1/2-1/2":
+          td.classList.add("result-draw");
+          break;
+        case "N/A":
+          td.classList.add("result-na");
+          break;
+      }
     }
-  }
 
-  row.appendChild(td);
+    row.appendChild(td);
+  });
+
+  table.appendChild(row);
 });
+
 
   return table;
 }
