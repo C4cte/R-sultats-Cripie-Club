@@ -11,22 +11,21 @@ const results = {
     "SQUAAD-4": { "Grégory": "0-1" },
     "Frisk": { "darkdust": "1-0" },
     "darkdust": { "Grégory": "1-0", "Frisk": "0-1", "SezTy": "1-0", "darkness": "1-0", "penguin": "1-0", "Nevender": "1-0", "pointriangle": "0-1", "Rip_toi": "0-1" },
-    "SezTy": { "darkdust": "0-1", "darkness": "0-1", "penguin": "1-0", "444_ma..li": "1-0", "Nevender": "0-1", "pointriangle": "0-1", "Rip_toi": "1-0", "cripie333": "1-0" }
-    "darkness": { "Grégory": "1-0", "darkdust": "0-1", "SezTy": "1-0", "Nevender": "1-0", "Draco": "1-0", "pointriangle": "0-1", "Fyn": "1-0"  }
-    "Bendospeed9": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "penguin": { "darkdust": "0-1", "SezTy": "0-1", "Bendospeed9": "1-0", "444_ma..li": "1-0", "Nevender": "0-1", "pointriangle": "1-0", "Fyn": "1-0" }
-    "444_ma..li": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "Nevender": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "Draco": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "Mimo": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "pointriangle": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "quentin59279": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "yoyo1406_": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "Fyn": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "Rip_toi": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    "cripie333": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
+    "SezTy": { "darkdust": "0-1", "darkness": "0-1", "penguin": "1-0", "444_ma..li": "1-0", "Nevender": "0-1", "pointriangle": "0-1", "Rip_toi": "1-0", "cripie333": "1-0" },
+    "darkness": { "Grégory": "1-0", "darkdust": "0-1", "SezTy": "1-0", "Nevender": "1-0", "Draco": "1-0", "pointriangle": "0-1", "Fyn": "1-0"  },
+    "Bendospeed9": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "penguin": { "darkdust": "0-1", "SezTy": "0-1", "Bendospeed9": "1-0", "444_ma..li": "1-0", "Nevender": "0-1", "pointriangle": "1-0", "Fyn": "1-0" },
+    "444_ma..li": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "Nevender": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "Draco": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "Mimo": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "pointriangle": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "quentin59279": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "yoyo1406_": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "Fyn": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "Rip_toi": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
+    "cripie333": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" },
     "champion93300": { "penguin": "0-1", "pointriangle": "0-1", "quentin59279": "0-1" }
-    
   },
   // Jour 2
   2: {
