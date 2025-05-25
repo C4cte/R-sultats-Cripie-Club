@@ -16,26 +16,6 @@ h2 {
   margin-top: 30px;
 }
 
-.result-win {
-  background-color: #44cc44; /* Vert doux */
-  color: #d0f9dc;
-}
-
-.result-loss {
-  background-color: #cc4444; /* Rouge doux */
-  color: #ffd0d0;
-}
-
-.result-draw {
-  background-color: #888844; /* Jaune un peu terne */
-  color: #fffbd0;
-}
-
-.result-na {
-  background-color: #aa6644; /* Orange terne */
-  color: #fff0dc;
-}
-
 .diagonal {
   background-color: #2a2a3f;
   color: #aaa;
@@ -99,4 +79,24 @@ th {
 
 td {
   background-color: #141420;
+}
+
+.result-win {
+  background-color: #44cc44; /* Vert doux */
+  color: #d0f9dc;
+}
+
+.result-loss {
+  background-color: #cc4444; /* Rouge doux */
+  color: #ffd0d0;
+}
+
+.result-draw {
+  background-color: #888844; /* Jaune un peu terne */
+  color: #fffbd0;
+}
+
+.result-na {
+  background-color: #aa6644; /* Orange terne */
+  color: #fff0dc;
 }
