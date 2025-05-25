@@ -62,18 +62,24 @@ table {
 th,
 td {
   border: 1px solid #333;
-  padding: 8px;
+  padding: 4px;                 /* réduit l’espace intérieur */
   text-align: center;
-  min-width: 60px;
+  min-width: 40px;              /* taille minimale réduite */
+  max-width: 80px;              /* taille maximale pour éviter l'étalement */
+  height: 32px;                 /* conserve un peu de hauteur */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 th {
-  background-color: #1f1f2e;
-  color: #00ffc3;
+  font-size: 10px;              /* police plus petite */
+  font-weight: normal;          /* facultatif : moins épais */
 }
 
 td {
   background-color: #141420;
+  font-size: 11px;              /* taille du texte dans les cellules */
 }
 
 .result-win {
