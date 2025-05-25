@@ -77,28 +77,28 @@ td {
 }
 
 .result-win {
-  background-color: #44cc44; /* Vert doux */
-  color: #d0f9dc;
+  background-color: #44cc44; /* Vert */
+  color: #ffffff;
 }
 
 .result-loss {
-  background-color: #cc4444; /* Rouge doux */
-  color: #ffd0d0;
+  background-color: #cc4444; /* Rouge */
+  color: #ffffff;
 }
 
 .result-draw {
-  background-color: #888844; /* Jaune un peu terne */
-  color: #fffbd0;
+  background-color: #cccc44; /* Jaune */
+  color: #ffffff;
 }
 
 .result-na {
-  background-color: #aa6644; /* Orange terne */
-  color: #fff0dc;
+  background-color: #aaaa66; /* Orange */
+  color: #ffffff;
 }
 
 
 /* Pour la diagonale (cases du joueur contre lui-même) */
 .diagonal {
-  background-color: #222;
-  color: #555;
+  background-color: #999999;
+  color: #ffffff;
 }
