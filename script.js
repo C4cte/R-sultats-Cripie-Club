@@ -52,16 +52,16 @@ function createTable(day) {
   });
   table.appendChild(header);
 
-  // Corps
-  dayPlayers.forEach(colPlayer => {
-    const col = document.createElement("tr");
+  // Corps (lignes = rowPlayer, colonnes = colPlayer)
+  dayPlayers.forEach(rowPlayer => {
+    const row = document.createElement("tr");
     const th = document.createElement("th");
-    th.textContent = colPlayer;
-    col.appendChild(th);
+    th.textContent = rowPlayer;
+    row.appendChild(th);
 
-    dayPlayers.forEach(rowPlayer => {
+    dayPlayers.forEach(colPlayer => {
       const td = document.createElement("td");
-      if (colPlayer === rowPlayer) {
+      if (rowPlayer === colPlayer) {
         td.textContent = "—";
         td.classList.add("diagonal");
       } else {
@@ -74,31 +74,11 @@ function createTable(day) {
           case "N/A":      td.classList.add("result-na");   break;
         }
       }
-      col.appendChild(td);
+      row.appendChild(td);
     });
 
-    table.appendChild(col);
+    table.appendChild(row);
   });
 
   return table;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector("#day1 .table-container");
-  container.appendChild(createTable(1));
-});
-
-function showDay(day) {
-  document.querySelectorAll(".tab-button").forEach((btn, index) => {
-    btn.classList.toggle("active", index === day - 1);
-  });
-
-  document.querySelectorAll(".tab-content").forEach((tab, index) => {
-    tab.classList.toggle("active", index === day - 1);
-  });
-
-  const container = document.querySelector(`#day${day} .table-container`);
-  if (!container.querySelector("table")) {
-    container.appendChild(createTable(day));
-  }
 }
