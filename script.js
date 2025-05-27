@@ -53,19 +53,19 @@ function createTable(day) {
   table.appendChild(header);
 
   // Corps
-  dayPlayers.forEach(rowPlayer => {
-    const row = document.createElement("tr");
+  dayPlayers.forEach(colPlayer => {
+    const col = document.createElement("tr");
     const th = document.createElement("th");
-    th.textContent = rowPlayer;
-    row.appendChild(th);
+    th.textContent = colPlayer;
+    col.appendChild(th);
 
-    dayPlayers.forEach(colPlayer => {
+    dayPlayers.forEach(rowPlayer => {
       const td = document.createElement("td");
-      if (rowPlayer === colPlayer) {
+      if (colPlayer === rowPlayer) {
         td.textContent = "—";
         td.classList.add("diagonal");
       } else {
-        const result = results[day]?.[colPlayer]?.[rowPlayer] || "";
+        const result = results[day]?.[rowPlayer]?.[colPlayer] || "";
         td.textContent = result;
         switch (result) {
           case "1-0":      td.classList.add("result-win");  break;
@@ -74,10 +74,10 @@ function createTable(day) {
           case "N/A":      td.classList.add("result-na");   break;
         }
       }
-      row.appendChild(td);
+      col.appendChild(td);
     });
 
-    table.appendChild(row);
+    table.appendChild(col);
   });
 
   return table;
