@@ -52,7 +52,7 @@ function createTable(day) {
   });
   table.appendChild(header);
 
-  // Corps (lignes = rowPlayer, colonnes = colPlayer)
+  // Corps du tableau
   dayPlayers.forEach(rowPlayer => {
     const row = document.createElement("tr");
     const th = document.createElement("th");
@@ -61,12 +61,23 @@ function createTable(day) {
 
     dayPlayers.forEach(colPlayer => {
       const td = document.createElement("td");
+
       if (rowPlayer === colPlayer) {
         td.textContent = "—";
         td.classList.add("diagonal");
       } else {
-        const result = results[day]?.[rowPlayer]?.[colPlayer] || "";
-        td.textContent = result;
+        let result = results[day]?.[rowPlayer]?.[colPlayer];
+
+        // Si le résultat n'existe pas dans ce sens, on regarde l’inverse (utile pour éviter les cases vides si symétriques)
+        if (!result && results[day]?.[colPlayer]?.[rowPlayer]) {
+          const inverse = results[day][colPlayer][rowPlayer];
+          if (inverse === "1-0") result = "0-1";
+          else if (inverse === "0-1") result = "1-0";
+          else result = inverse; // Pour "½-½" ou "N/A"
+        }
+
+        td.textContent = result || "";
+
         switch (result) {
           case "1-0":      td.classList.add("result-win");  break;
           case "0-1":      td.classList.add("result-loss"); break;
@@ -74,6 +85,7 @@ function createTable(day) {
           case "N/A":      td.classList.add("result-na");   break;
         }
       }
+
       row.appendChild(td);
     });
 
@@ -81,4 +93,24 @@ function createTable(day) {
   });
 
   return table;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector("#day1 .table-container");
+  container.appendChild(createTable(1));
+});
+
+function showDay(day) {
+  document.querySelectorAll(".tab-button").forEach((btn, index) => {
+    btn.classList.toggle("active", index === day - 1);
+  });
+
+  document.querySelectorAll(".tab-content").forEach((tab, index) => {
+    tab.classList.toggle("active", index === day - 1);
+  });
+
+  const container = document.querySelector(#day${day} .table-container);
+  if (!container.querySelector("table")) {
+    container.appendChild(createTable(day));
+  }
 }
